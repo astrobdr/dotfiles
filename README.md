@@ -3,9 +3,10 @@
 # macOS
 ```
 brew install fzf tmux
+brew install zsh-autosuggestions
 ```
 
-# Debian/Ubuntu
+# linux
 ```
 sudo apt-get install fzf tmux
 ```

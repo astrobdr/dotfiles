@@ -1,4 +1,13 @@
 # dotfiles
+this is a really simple dotfiles setup for zsh, tmux, and fzf. It just has a few features that make terminal a happy place for me.
+
+1. `ctrl-r` history search
+2. tmux mouse mode enabled
+3. tmux pane navigation with `ctrl-hjkl` or `alt-hjkl`
+4. tmux copy mode with `v` and `y`
+5. zsh autosuggestions
+
+thats more or less it. follow the instructions below to install and setup.
 
 # macOS
 ```

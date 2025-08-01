@@ -18,12 +18,19 @@ brew install zsh-autosuggestions
 # linux
 ```
 sudo apt-get install fzf tmux
+sudo apt-get install zsh-autosuggestions
 ```
 
 # setup
+Just source the files from `~/.zshrc` and `~/.tmux.conf`
+
+in `~/.zshrc` 
 ```
-ln -sf ~/repos/dotfiles/zshrc ~/.zshrc
-ln -sf ~/repos/dotfiles/tmux.conf ~/.tmux.conf
+source ~/dotfiles/zshrc
+```
+in `~/.tmux.conf`
+```
+source-file ~/dotfiles/tmux.conf
 ```
 
 # For iTerm2

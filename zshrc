@@ -43,3 +43,22 @@ setopt PROMPT_SUBST
 autoload -U colors && colors
 # Colorful prompt with git branch info
 PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%}%{$fg[yellow]%}${vcs_info_msg_0_}%{$reset_color%} %{$fg[magenta]%}❯%{$reset_color%} '
+
+# ──────────────────────────────────────────────────────────────────────
+# SHORTCUT COMMANDS
+# ──────────────────────────────────────────────────────────────────────
+git_diff_since_base() {
+  git diff "$(git merge-base HEAD origin/main)" "$@"
+}
+# Show commits since branching from origin/main
+git_log_since_base() {
+  git log "$(git merge-base HEAD origin/main)"..HEAD "$@"
+}
+# Show summary (stats) since branching
+git_stat_since_base() {
+  git diff --stat "$(git merge-base HEAD origin/main)" "$@"
+}
+# Show just the files changed
+git_files_since_base() {
+  git diff --name-only "$(git merge-base HEAD origin/main)" "$@"
+}

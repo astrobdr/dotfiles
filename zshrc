@@ -20,12 +20,20 @@ export KEYTIMEOUT=1       # faster Esc-to-Normal switch
 bindkey -M viins '^?' backward-delete-char   # Insert mode
 bindkey -M vicmd '^?' backward-delete-char   # (rarely needed, but harmless)
 
-# autosuggestions (for zsh brew macos)
+# zsh-autosuggestions (macOS brew / Linux apt / manual clone)
 if [[ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  # macOS (Homebrew)
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-else
+elif [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  # Ubuntu/Debian (apt)
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ -f ~/.zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  # Manual install
   source ~/.zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+  echo "⚠️  zsh-autosuggestions not found. Please install it (brew, apt, or manual clone)."
 fi
+
 
 # ──────────────────────────────────────────────────────────────────────
 # PROMPT CONFIGURATION

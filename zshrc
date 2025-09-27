@@ -70,3 +70,6 @@ git_stat_since_base() {
 git_files_since_base() {
   git diff --name-only "$(git merge-base HEAD origin/main)" "$@"
 }
+
+# --- escape timeout in vim needs to be faster ---
+set -sg escape-time 10

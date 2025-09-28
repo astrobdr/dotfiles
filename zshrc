@@ -1,5 +1,6 @@
 # ~/.dotfiles/zshrc  ────────────────────────────────────────────────
 
+export GIT_EDITOR=nvim
 setopt histignorealldups sharehistory
 HISTSIZE=10000
 SAVEHIST=10000
@@ -11,6 +12,11 @@ if [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
   source /usr/share/doc/fzf/examples/key-bindings.zsh
 elif [[ -f "$(brew --prefix 2>/dev/null)/opt/fzf/shell/key-bindings.zsh" ]]; then
   source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+elif [[ -f ~/.fzf/shell/key-bindings.zsh ]]; then
+  source ~/.fzf.zsh
+  source ~/.fzf/shell/key-bindings.zsh
+else
++  echo "🔴 fzf not found"
 fi
 
 # Vi command-line editing

@@ -1,5 +1,8 @@
 # ~/.dotfiles/zshrc  ────────────────────────────────────────────────
 
+# path to this dotfiles file
+export DOTFILES=${${(%):-%x:A}:h}
+
 export GIT_EDITOR=nvim
 setopt histignorealldups sharehistory
 HISTSIZE=10000
@@ -124,4 +127,7 @@ dotfiles_health_check() {
 # ──────────────────────────────────────────────────────────────────────
 uv_gpustat() {
   uv run --with 'gpustat' gpustat -i
+}
+uv_make_folder_context() {
+  uv run "$DOTFILES/python_scripts/llm_context.py" "$@"
 }

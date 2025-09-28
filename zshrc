@@ -83,7 +83,7 @@ dotfiles_health_check() {
   echo "─────── HEALTH CHECK ───────"
   # Check for command-line tools
   local cmd loc
-  for cmd in git tmux fzf uv nvidia-smi; do
+  for cmd in git tmux fzf uv nvidia-smi nvim vim ; do
     if loc=$(command -v "$cmd" 2>/dev/null); then
       echo "✅ ${cmd}: ${loc}"
     else
@@ -110,4 +110,12 @@ dotfiles_health_check() {
   else
     echo "❌ zsh-autosuggestions: not found"
   fi
+}
+
+
+# ──────────────────────────────────────────────────────────────────────
+# PYTHON PROGRAMS
+# ──────────────────────────────────────────────────────────────────────
+uv_gpustat() {
+  uv run --with 'gpustat' gpustat -i
 }

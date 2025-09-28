@@ -1,7 +1,9 @@
 # ~/.dotfiles/zshrc  ────────────────────────────────────────────────
 
-
-
+setopt histignorealldups sharehistory
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
 # Fuzzy Ctrl-R history (fzf) – Zsh version
 export FZF_CTRL_R_OPTS="--sort --prompt 'History>'"
@@ -73,3 +75,39 @@ git_files_since_base() {
 
 # --- escape timeout in vim needs to be faster ---
 set -sg escape-time 10
+
+# ──────────────────────────────────────────────────────────────────────
+# HEALTH CHECK
+# ──────────────────────────────────────────────────────────────────────
+dotfiles_health_check() {
+  echo "─────── HEALTH CHECK ───────"
+  # Check for command-line tools
+  local cmd loc
+  for cmd in git tmux fzf uv nvidia-smi; do
+    if loc=$(command -v "$cmd" 2>/dev/null); then
+      echo "✅ ${cmd}: ${loc}"
+    else
+      echo "❌ ${cmd}: not found"
+    fi
+  done
+  
+  # Check for zsh-autosuggestions script
+  local script_path path
+  local potential_paths=(
+    "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    "$HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh"
+  )
+  for path in "${potential_paths[@]}"; do
+    if [[ -f "$path" ]]; then
+      script_path=$path
+      break
+    fi
+  done
+  
+  if [[ -n "$script_path" ]]; then
+    echo "✅ zsh-autosuggestions: ${script_path}"
+  else
+    echo "❌ zsh-autosuggestions: not found"
+  fi
+}

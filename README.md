@@ -11,14 +11,18 @@ thats more or less it. follow the instructions below to install and setup.
 
 # macOS
 ```
-brew install fzf tmux
+brew install fzf
+brew install tmux
 brew install zsh-autosuggestions
+brew install neovim
 ```
 
-# linux
+# linux (ubuntu)
 ```
-sudo apt-get install fzf tmux
+sudo apt-get install fzf
+sudo apt-get install tmux
 sudo apt-get install zsh-autosuggestions
+sudo apt-get install neovim
 ```
 
 # setup
@@ -38,4 +42,4 @@ source-file ~/dotfiles/tmux.conf
 - Preferences ▸ Profiles ▸ Terminal ▸ Enable mouse reporting
 
 # Bash not supported
-Install zsh pls.
+Install zsh pls. (`sudo chsh -s $(which zsh)` and re-open shell, sourcing wont change it)

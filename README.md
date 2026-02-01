@@ -36,4 +36,4 @@ source-file ~/dotfiles/tmux.conf
 - Preferences ▸ Profiles ▸ Terminal ▸ Enable mouse reporting
 
 # Bash not supported
-Install zsh pls. (`sudo chsh -s $(which zsh)` and re-open shell, sourcing wont change it)
+Install zsh pls (`sudo apt-get install zsh`). Then (`sudo chsh -s $(which zsh)` and re-open shell, sourcing wont change it)

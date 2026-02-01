@@ -36,3 +36,6 @@ source-file ~/dotfiles/tmux.conf
 # For iTerm2
 - need to enable mouse reporting in iTerm2 settings
 - Preferences ▸ Profiles ▸ Terminal ▸ Enable mouse reporting
+
+# Bash not supported
+Install zsh pls.

@@ -41,6 +41,8 @@ Install zsh pls (`sudo apt-get install zsh`). Then (`sudo chsh -s $(which zsh)` 
 # Setting up a mac laptop for the first time
 - 🍺 Install brew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (https://brew.sh/) (will ask for password and installs xcode tools)
 - Activate key repeat, do this in terminal: `defaults write -g ApplePressAndHoldEnabled -bool false` <[source](https://www.macworld.com/article/351347/how-to-activate-key-repetition-through-the-macos-terminal.html)>
+- Get [ghostty](https://ghostty.org/) and/or [iterm2](https://iterm2.com/)
+- Hide macos dock (right click the `|` icon and hide)
 - Increase key repeat rate and shorten delay until repeat:
   - <img width="712" height="169" alt="Screenshot 2026-03-06 at 4 08 00 PM" src="https://github.com/user-attachments/assets/38be652f-0b2c-41b4-b7a8-9c297fb9ab0d" />
 - Increase trackpad speed:

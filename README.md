@@ -44,7 +44,7 @@ Install zsh pls (`sudo apt-get install zsh`). Then (`sudo chsh -s $(which zsh)` 
   
 - 🍺 Install brew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (https://brew.sh/) (will ask for password and installs xcode tools)
 - [Rectangle](https://github.com/rxhanson/Rectangle) for window snapping: `brew install --cask rectangle`
-- Activate key repeat, do this in terminal: `defaults write -g ApplePressAndHoldEnabled -bool false` <[source](https://www.macworld.com/article/351347/how-to-activate-key-repetition-through-the-macos-terminal.html)>
+- Activate key repeat, do this in terminal: `defaults write -g ApplePressAndHoldEnabled -bool false` <[source](https://www.macworld.com/article/351347/how-to-activate-key-repetition-through-the-macos-terminal.html)> (then restart laptop)
 - Get [ghostty](https://ghostty.org/) and/or [iterm2](https://iterm2.com/)
 - Hide macos dock (right click the `|` icon and hide)
 - Increase key repeat rate and shorten delay until repeat:

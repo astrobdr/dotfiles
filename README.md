@@ -1,5 +1,5 @@
 # dotfiles
-this is a really simple dotfiles setup for zsh, tmux, and fzf. It just has a few features that make terminal a happy place for me.
+My dotfiles and setup for mac & linux. Use at your own risk.
 
 # macOS
 ```
@@ -38,7 +38,7 @@ source-file ~/dotfiles/tmux.conf
 - Preferences ▸ Profiles ▸ Terminal ▸ Enable mouse reporting
 
 # Bash not supported
-Install zsh pls (`sudo apt-get install zsh`). Then (`sudo chsh -s $(which zsh)` and re-open shell, sourcing wont change it)
+Install zsh pls (`sudo apt-get install zsh`). Then `sudo chsh -s $(which zsh)` and re-open shell, sourcing wont change it)
 
 # Setting up a mac 🍏 laptop for the first time
 <details>

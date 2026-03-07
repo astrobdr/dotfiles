@@ -7,6 +7,7 @@ brew install fzf
 brew install tmux
 brew install zsh-autosuggestions
 brew install neovim
+brew install ripgrep
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
@@ -16,6 +17,7 @@ sudo apt-get install fzf
 sudo apt-get install tmux
 sudo apt-get install zsh-autosuggestions
 sudo apt-get install neovim
+sudo apt-get install ripgrep
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 

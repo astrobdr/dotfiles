@@ -37,3 +37,14 @@ source-file ~/dotfiles/tmux.conf
 
 # Bash not supported
 Install zsh pls (`sudo apt-get install zsh`). Then (`sudo chsh -s $(which zsh)` and re-open shell, sourcing wont change it)
+
+# Setting up a mac laptop for the first time
+- 🍺 Install brew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (https://brew.sh/) (will ask for password and installs xcode tools)
+- Activate key repeat, do this in terminal: `defaults write -g ApplePressAndHoldEnabled -bool false` <[source](https://www.macworld.com/article/351347/how-to-activate-key-repetition-through-the-macos-terminal.html)>
+- Increase key repeat rate and shorten delay until repeat:
+  - <img width="712" height="169" alt="Screenshot 2026-03-06 at 4 08 00 PM" src="https://github.com/user-attachments/assets/38be652f-0b2c-41b4-b7a8-9c297fb9ab0d" />
+- Increase trackpad speed:
+  - <img width="712" height="300" alt="Screenshot 2026-03-06 at 4 12 09 PM" src="https://github.com/user-attachments/assets/449eccbe-b59b-4e79-b7a6-fb87bb23e041" />
+- Enable 3 finger drag:
+  - <img width="719" height="527" alt="Screenshot 2026-03-06 at 4 15 21 PM" src="https://github.com/user-attachments/assets/c9ddc2e1-06bd-48e8-81ae-0c66bebf6455" />
+ 

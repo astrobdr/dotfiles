@@ -40,6 +40,12 @@ source-file ~/dotfiles/tmux.conf
 # Bash not supported
 Install zsh pls (`sudo apt-get install zsh`). Then `sudo chsh -s $(which zsh)` and re-open shell, sourcing wont change it)
 
+# Github access
+1. `ssh-keygen -t ed25519 -C "your_email@example.com"`
+2. cat & copy `cat ~/.ssh/id_ed25519.pub`
+3. In github web UI go to, Settings → SSH and GPG keys → New SSH key
+4. done
+
 # Setting up a mac 🍏 laptop for the first time
 <details>
   <summary>click here</summary>

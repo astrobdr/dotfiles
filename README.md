@@ -48,7 +48,7 @@ Install zsh pls (`sudo apt-get install zsh`). Then `sudo chsh -s $(which zsh)` a
 
 # Install Claude Code & Codex
 - `brew install node`
-- `npm install -g @anthropic-ai/claude-code` <[source](https://code.claude.com/docs/en/setup#:~:text=macOS%2C%20Linux%2C%20WSL%3A,Ask%20AI)>
+- `curl -fsSL https://claude.ai/install.sh | bash` <[source](https://code.claude.com/docs/en/setup#:~:text=macOS%2C%20Linux%2C%20WSL%3A,Ask%20AI)>
 - `npm i -g @openai/codex` <[source](https://developers.openai.com/codex/cli/#:~:text=1-,Install,-Install%20the%20Codex)>
 
 # Setting up a mac 🍏 laptop for the first time

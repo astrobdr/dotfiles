@@ -5,6 +5,9 @@ export DOTFILES=${${(%):-%x:A}:h}
 
 alias gs='git-spice'
 
+# for ghostty
+export TERM=xterm-256color
+
 export GIT_EDITOR=nvim
 setopt histignorealldups sharehistory
 HISTSIZE=75000
@@ -27,7 +30,7 @@ fi
 # Vi command-line editing
 # set -o vi                 # enable Vi command-line editing
 bindkey -v
-export KEYTIMEOUT=1       # faster Esc-to-Normal switch
+export KEYTIMEOUT=3       # faster Esc-to-Normal switch
 
 # make sure the Backspace (DEL) key works in BOTH vi modes
 bindkey -M viins '^?' backward-delete-char   # Insert mode
@@ -257,7 +260,7 @@ wtmux_rm() {
     local branch=${flat/_/\/}
     local dir=../${name}
 
-    tmux kill-session -t "$name" 2>/dev/null && echo "Killed tmux: $name"
+    tmux kill-session -t "=$name" 2>/dev/null && echo "Killed tmux: $name"
     git worktree remove --force "$dir" 2>/dev/null && echo "Removed worktree: $dir"
 
     # Delete branch only if not checked out elsewhere

@@ -226,6 +226,44 @@ Options:
 
   echo "Attach: tmux attach -t $session"
 }
+# ──────────────────────────────────────────────────────────────────────
+# PORT / LOCAL SERVER COMMANDS
+# ──────────────────────────────────────────────────────────────────────
+# Show listening TCP ports: `ports` for all, `ports 8080` for a specific one
+ports() {
+  local lsof_args=(-iTCP -sTCP:LISTEN -nP)
+  [[ -n "$1" ]] && lsof_args=(-iTCP:"$1" -sTCP:LISTEN -nP)
+  echo "PORT\tPID\tCOMMAND\tURL"
+  lsof "${lsof_args[@]}" 2>/dev/null \
+    | awk 'NR>1 {
+        split($9, a, ":");
+        port = a[length(a)];
+        addr = substr($9, 1, length($9)-length(port)-1);
+        pid = $2;
+        cmd = $1;
+        key = port SUBSEP pid;
+        if (!(key in seen)) {
+          seen[key];
+          host = (addr == "*" || addr == "") ? "localhost" : addr;
+          printf "%s\t%s\t%s\thttp://%s:%s\n", port, pid, cmd, host, port
+        }
+      }' \
+    | sort -n \
+    | column -t -s $'\t'
+}
+
+# Kill whatever is on a port: killport 8080
+killport() {
+  [[ -z "$1" ]] && { echo "Usage: killport <port>"; return 1 }
+  local pids=(${(f)"$(lsof -ti TCP:"$1" -sTCP:LISTEN 2>/dev/null)"})
+  if (( ${#pids[@]} == 0 )); then
+    echo "Nothing listening on port $1"
+    return 0
+  fi
+  echo "Killing PIDs: ${pids[*]} (port $1)"
+  kill "${pids[@]}"
+}
+
 wtmux_rm() {
   # Interactive teardown of worktree + tmux session + branch.
   # Collects from both tmux sessions and worktrees so it works even if
